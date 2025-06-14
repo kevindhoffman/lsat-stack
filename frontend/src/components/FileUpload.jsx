@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 
-const API_URL = 'https://lsat-api.onrender.com/upload' // Replace with deployed backend URL
+const API_URL = 'https://lsat-stack.onrender.com/upload'
 
 export default function FileUpload() {
   const [file, setFile] = useState(null)
