@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
 import json
 import random
 
@@ -20,6 +20,14 @@ app.add_middleware(
 # Load questions from a JSON file
 with open("questions.json") as f:
     QUESTIONS = json.load(f)
+
+@app.get("/")
+async def root():
+    return RedirectResponse(url="/api/question")
+
+@app.get("/api/health")
+def health():
+    return {"status": "healthy"}
 
 @app.get("/api/question")
 async def get_question():
