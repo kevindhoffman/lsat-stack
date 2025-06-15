@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LSAT Upload</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LSAT Lab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">LSAT Lab</div>
+    <div class="login">Login</div>
+  </header>
+
+  <main>
+    <div id="question-box">
+      <div id="stimulus"></div>
+      <div id="choices"></div>
+    </div>
+
+    <div id="feedback-box" class="hidden">
+      <div class="professor-card" id="veritas">
+        <img src="assets/veritas.png" alt="Veritas" class="professor-avatar" />
+        <div class="professor-name">Professor Veritas</div>
+        <div class="professor-quote"></div>
+      </div>
+      <div class="professor-card" id="oak">
+        <img src="assets/oak.png" alt="Oak" class="professor-avatar" />
+        <div class="professor-name">Dean Oak</div>
+        <div class="professor-quote"></div>
+      </div>
+      <div class="professor-card" id="strickland">
+        <img src="assets/strickland.png" alt="Strickland" class="professor-avatar" />
+        <div class="professor-name">Professor Strickland</div>
+        <div class="professor-quote"></div>
+      </div>
+      <div class="professor-card" id="calder">
+        <img src="assets/calder.png" alt="Calder" class="professor-avatar" />
+        <div class="professor-name">Professor Calder</div>
+        <div class="professor-quote"></div>
+      </div>
+    </div>
+    
+  </main>
+
+  <script type="module" src="main.mjs"></script>
+</body>
 </html>
