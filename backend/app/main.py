@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, RedirectResponse
 import json
 import random
+import os
 
 app = FastAPI()
 
@@ -17,9 +18,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load questions from a JSON file
-with open("questions.json") as f:
+# Load questions from a JSON file (safe path)
+
+base_path = os.path.dirname(os.path.dirname(__file__))
+file_path = os.path.join(base_path, "questions.json")
+
+with open(file_path) as f:
     QUESTIONS = json.load(f)
+
 
 @app.get("/")
 async def root():

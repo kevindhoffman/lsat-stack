@@ -1,15 +1,20 @@
-// frontend/main.mjs
+// frontend/src/main.mjs
+import { supabase } from './src/supabaseClient.js'
+
 const isLocal = window.location.hostname === "localhost";
 const API_BASE_URL = isLocal
   ? "http://localhost:8000"
   : "https://lsat-stack.onrender.com";
 
-
+let user = null;
+let questionCount = 0;
 let currentQuestion = null;
 let startTime = null;
+
 const chartCanvas = document.getElementById("feedback-chart");
 const ctx = chartCanvas.getContext("2d");
 const chartPoints = [];
+
 const categoryIcons = {
   vocabulary: "assets/vocab.png",
   reading: "assets/reading.png",
@@ -18,9 +23,9 @@ const categoryIcons = {
   argumentation: "assets/balance.png",
   logic: "assets/logic.png"
 };
+
 const chartWrapper = document.getElementById("chart-wrapper");
 let hasAnsweredFirstQuestion = false;
-
 
 function renderQuestion(q) {
   currentQuestion = q;
@@ -41,15 +46,6 @@ function renderQuestion(q) {
 
   document.getElementById("next-btn").classList.add("hidden");
 
-  // ["veritas", "oak", "strickland", "calder"].forEach(id => {
-  //   const card = document.getElementById(id);
-  //   card.classList.remove("correct", "incorrect");
-  //   card.classList.add("hidden");
-  //   card.querySelector(".professor-quote").innerText = "";
-  // });
-
-  // chartWrapper.classList.add("hidden");
-
   ["veritas", "oak", "strickland", "calder"].forEach(id => {
     const card = document.getElementById(id);
     card.classList.remove("correct", "incorrect");
@@ -62,14 +58,17 @@ function renderQuestion(q) {
   if (!hasAnsweredFirstQuestion) {
     chartWrapper.classList.add("hidden");
   }
-
-
-
 }
 
 async function fetchQuestion() {
+  if (!user && questionCount >= 3) {
+    alert("Please sign in with Google to continue practicing.");
+    return;
+  }
+
   const res = await fetch(`${API_BASE_URL}/api/question`);
   const question = await res.json();
+  questionCount++;
   renderQuestion(question);
 }
 
@@ -87,7 +86,6 @@ async function submitAnswer(choice) {
       answer: choice,
       time_sec: timeSec
     })
-    
   });
 
   const result = await res.json();
@@ -119,11 +117,9 @@ async function submitAnswer(choice) {
   });
 
   drawChart();
-  
+
   hasAnsweredFirstQuestion = true;
-
   chartWrapper.classList.remove("hidden");
-
   document.getElementById("next-btn").classList.remove("hidden");
 }
 
@@ -140,7 +136,51 @@ function drawChart() {
   });
 }
 
+function updateAuthUI() {
+  const loginBtn = document.getElementById("login-btn");
+  const logoutBtn = document.getElementById("logout-btn");
+  const userEmail = document.getElementById("user-email");
+
+  if (user) {
+    loginBtn.style.display = "none";
+    logoutBtn.style.display = "inline-block";
+    userEmail.innerText = `Hi, ${user.email}`;
+  } else {
+    loginBtn.style.display = "inline-block";
+    logoutBtn.style.display = "none";
+    userEmail.innerText = "";
+  }
+}
+
+async function initAuth() {
+  const { data } = await supabase.auth.getUser();
+  user = data.user;
+  updateAuthUI();
+
+  supabase.auth.onAuthStateChange((_event, session) => {
+    user = session?.user || null;
+    updateAuthUI();
+  });
+}
+
+document.getElementById("login-btn").onclick = async () => {
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: window.location.href
+    }
+  });
+  if (error) console.error("Login error:", error.message);
+};
+
+document.getElementById("logout-btn").onclick = async () => {
+  const { error } = await supabase.auth.signOut();
+  if (error) console.error("Logout error:", error.message);
+};
+
 document.addEventListener("DOMContentLoaded", () => {
+  initAuth();
+
   ["veritas", "oak", "strickland", "calder"].forEach(id => {
     document.getElementById(id).classList.add("hidden");
   });
@@ -148,7 +188,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const nextBtn = document.getElementById("next-btn");
   nextBtn.onclick = fetchQuestion;
-
 });
 
 fetchQuestion();

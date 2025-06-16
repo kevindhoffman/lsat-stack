@@ -7,10 +7,18 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="logo">LSAT Lab</div>
-    <div class="login">Login</div>
+  <header style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
+    <div id="app-logo" style="font-weight: bold; font-size: 1.5rem;">
+      <img src="assets/thelawlab.png" alt="The Law Lab" style="height: 40px; vertical-align: middle; margin-right: 0.5rem;" />
+      The Law Lab
+    </div>
+    <div id="auth-controls">
+      <button id="login-btn">Sign in with Google</button>
+      <button id="logout-btn" style="display:none;">Log out</button>
+      <span id="user-email" style="margin-left: 1rem;"></span>
+    </div>
   </header>
+
 
   <main class="main-layout">
     <div id="left-profs" class="professor-column">
