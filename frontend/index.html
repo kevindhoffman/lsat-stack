@@ -1,71 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LSAT Lab</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
-    <div id="app-logo" style="font-weight: bold; font-size: 1.5rem;">
-      <img src="assets/thelawlab.png" alt="The Law Lab" style="height: 40px; vertical-align: middle; margin-right: 0.5rem;" />
-      The Law Lab
-    </div>
-    <div id="auth-controls">
-      <button id="login-btn">Sign in with Google</button>
-      <button id="logout-btn" style="display:none;">Log out</button>
-      <span id="user-email" style="margin-left: 1rem;"></span>
-    </div>
-  </header>
-
-
-  <main class="main-layout">
-    <div id="left-profs" class="professor-column">
-      <div class="professor-card hidden" id="veritas">
-        <img src="assets/veritas.png" alt="Veritas" class="professor-avatar" />
-        <div class="professor-name">Professor Veritas</div>
-        <div class="professor-quote"></div>
-      </div>
-      <div class="professor-card hidden" id="oak">
-        <img src="assets/oak.png" alt="Oak" class="professor-avatar" />
-        <div class="professor-name">Professor Oak</div>
-        <div class="professor-quote"></div>
-      </div>
-    </div>
-
-    <div id="question-box">
-      <div id="stimulus"></div>
-      <div id="choices"></div>
-      <div id="next-btn-container">
-        <button id="next-btn" class="hidden">Next Question</button>
-      </div>
-    </div>
-
-
-
-    <div id="right-profs" class="professor-column">
-      <div class="professor-card hidden" id="strickland">
-        <img src="assets/strickland.png" alt="Strickland" class="professor-avatar" />
-        <div class="professor-name">Professor Strickland</div>
-        <div class="professor-quote"></div>
-      </div>
-      <div class="professor-card hidden" id="calder">
-        <img src="assets/calder.png" alt="Calder" class="professor-avatar" />
-        <div class="professor-name">Professor Calder</div>
-        <div class="professor-quote"></div>
-      </div>
-    </div>
-  </main>
-
-  <div id="chart-wrapper" class="hidden">
-    <div class="y-label">↑ Strategic Efficiency</div>
-    <canvas id="feedback-chart" width="600" height="400"></canvas>
-    <div class="x-label">Logical Complexity →</div>
-  </div>
-
-
-
-  <script type="module" src="main.mjs"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Law Lab</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

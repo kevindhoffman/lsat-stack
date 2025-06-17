@@ -1,0 +1,206 @@
+[
+  {
+    "question_id": "q001",
+    "category": "logic",
+    "logical_complexity": 40,
+    "expected_time_sec": 75,
+    "stimulus": "All contracts require consideration. This agreement lacks consideration. Therefore, this agreement is not a valid contract.",
+    "choices": {
+      "A": "The reasoning is valid and properly applied.",
+      "B": "The argument confuses sufficiency with necessity.",
+      "C": "The argument assumes that consideration is the only requirement for a contract.",
+      "D": "The conclusion improperly generalizes from a specific case.",
+      "E": "The reasoning is circular."
+    },
+    "correct_answer": "A",
+    "explanation": "The premises logically support the conclusion using a classic categorical form: all A are B; this is not B; therefore, not A.",
+    "professor_feedback": {
+      "veritas": {
+        "correct": "You spotted the clean deductive structure. Classic logic.",
+        "incorrect": "Consider the categorical form. This one's tight and valid."
+      },
+      "oak": {
+        "correct": "Solid grasp on foundational contract logic. Well done.",
+        "incorrect": "Remember: no consideration, no contract. It's basic but essential."
+      },
+      "strickland": {
+        "correct": "Exactly. Valid form, properly applied. Keep your reasoning this tight.",
+        "incorrect": "The structure was formally correct\u2014look again at the premises."
+      },
+      "calder": {
+        "correct": "Nice! Even basic rules build sound legal worlds.",
+        "incorrect": "Even simplicity deserves close reading. This was more precise than you gave it credit for."
+      }
+    }
+  },
+  {
+    "question_id": "q002",
+    "category": "inference",
+    "logical_complexity": 50,
+    "expected_time_sec": 80,
+    "stimulus": "During trial, the judge excluded certain testimony as hearsay. Hearsay is inadmissible unless an exception applies. No exception was offered.",
+    "choices": {
+      "A": "The judge acted improperly.",
+      "B": "The testimony was inadmissible under the rules of evidence.",
+      "C": "Hearsay can never be admitted.",
+      "D": "The attorney failed to argue the case effectively.",
+      "E": "Judges always exclude hearsay."
+    },
+    "correct_answer": "B",
+    "explanation": "If hearsay is inadmissible absent an exception, and no exception was offered, it follows that the testimony was inadmissible.",
+    "professor_feedback": {
+      "veritas": {
+        "correct": "Well reasoned. You moved carefully from rule to conclusion.",
+        "incorrect": "The key was connecting the rule to the facts given."
+      },
+      "oak": {
+        "correct": "You're right on track. This is textbook inference work.",
+        "incorrect": "Slow down and follow the if-then structure. It's all there."
+      },
+      "strickland": {
+        "correct": "This is the kind of crisp inference the LSAT demands.",
+        "incorrect": "Don\u2019t jump to conclusions. Infer only what the facts justify."
+      },
+      "calder": {
+        "correct": "That\u2019s the spirit. Let logic do the lifting.",
+        "incorrect": "Try hearing the rhythm of the logic \u2014 rule, fact, result."
+      }
+    }
+  },
+  {
+    "question_id": "q003",
+    "category": "reading",
+    "logical_complexity": 60,
+    "expected_time_sec": 90,
+    "stimulus": "Passage: 'Justice is not merely the application of rules, but the context-sensitive pursuit of fairness.' \u2014 The author\u2019s main point is:",
+    "choices": {
+      "A": "Rules are irrelevant in achieving justice.",
+      "B": "Justice requires empathy, not rules.",
+      "C": "Justice is a flexible and nuanced application of fairness.",
+      "D": "The author believes fairness is subjective.",
+      "E": "Rules are the opposite of justice."
+    },
+    "correct_answer": "C",
+    "explanation": "The passage contrasts rules with fairness to emphasize that justice is not mechanical but flexible and context-aware.",
+    "professor_feedback": {
+      "veritas": {
+        "correct": "You read between the lines. Nice synthesis.",
+        "incorrect": "You may have mistaken tone for argument. Reread carefully."
+      },
+      "oak": {
+        "correct": "Clear grasp of nuance in reading. Well interpreted.",
+        "incorrect": "Don\u2019t read too quickly \u2014 the contrast was the clue."
+      },
+      "strickland": {
+        "correct": "A clean extraction of the main point. Nicely done.",
+        "incorrect": "Avoid extreme answers unless the passage is extreme."
+      },
+      "calder": {
+        "correct": "Ah, you heard the echo behind the words. Beautiful.",
+        "incorrect": "That was the surface meaning. Look for the tension underneath."
+      }
+    }
+  },
+  {
+    "question_id": "q004",
+    "category": "argumentation",
+    "logical_complexity": 70,
+    "expected_time_sec": 85,
+    "stimulus": "If increasing police presence always leads to decreased crime, then cities with more officers should have lower crime rates. But data shows no consistent relationship.",
+    "choices": {
+      "A": "The argument assumes that correlation implies causation.",
+      "B": "The reasoning highlights an exception to a rule.",
+      "C": "It attacks a premise rather than the conclusion.",
+      "D": "It challenges the conclusion by undermining the conditional claim.",
+      "E": "It introduces a straw man argument."
+    },
+    "correct_answer": "D",
+    "explanation": "The conclusion questions the premise by pointing out counterevidence, undermining the conditional link.",
+    "professor_feedback": {
+      "veritas": {
+        "correct": "You dismantled that conditional neatly.",
+        "incorrect": "Look for how the evidence confronts the stated condition."
+      },
+      "oak": {
+        "correct": "Excellent\u2014see how evidence challenges assumptions?",
+        "incorrect": "The trick here was in the shift from claim to counterexample."
+      },
+      "strickland": {
+        "correct": "Solid takedown of the logic. Keep punching holes precisely.",
+        "incorrect": "You let the premise slip by unchallenged\u2014dig deeper."
+      },
+      "calder": {
+        "correct": "Nice reversal! Data always has stories to tell.",
+        "incorrect": "Patterns deserve closer scrutiny. This one undermined the premise itself."
+      }
+    }
+  },
+  {
+    "question_id": "q005",
+    "category": "analytical",
+    "logical_complexity": 65,
+    "expected_time_sec": 85,
+    "stimulus": "Three friends\u2014Ava, Ben, and Carlos\u2014each play a different instrument: guitar, drums, or violin. The drummer is not Ben. Carlos doesn\u2019t play guitar. Who plays what?",
+    "choices": {
+      "A": "Ava plays drums, Ben guitar, Carlos violin.",
+      "B": "Ava guitar, Ben drums, Carlos violin.",
+      "C": "Ava violin, Ben guitar, Carlos drums.",
+      "D": "Ava guitar, Ben violin, Carlos drums.",
+      "E": "Ava drums, Ben violin, Carlos guitar."
+    },
+    "correct_answer": "A",
+    "explanation": "Process of elimination: Drummer isn\u2019t Ben \u21d2 Ava or Carlos. Carlos doesn\u2019t play guitar \u21d2 Ava plays guitar. That leaves Ava = drums, Ben = guitar, Carlos = violin.",
+    "professor_feedback": {
+      "veritas": {
+        "correct": "Classic deduction\u2014used all the clues well.",
+        "incorrect": "The answer was in the constraints. Revisit step-by-step."
+      },
+      "oak": {
+        "correct": "Great job working through it methodically.",
+        "incorrect": "You may have rushed. Try drawing it out."
+      },
+      "strickland": {
+        "correct": "Clean logic. No assumptions. No fluff.",
+        "incorrect": "You didn\u2019t track all the constraints. Logic puzzles require completeness."
+      },
+      "calder": {
+        "correct": "A musical logic symphony. Nicely composed.",
+        "incorrect": "Next time, treat it like a grid. Music, logic\u2014it all flows."
+      }
+    }
+  },
+  {
+    "question_id": "q006",
+    "category": "vocabulary",
+    "logical_complexity": 25,
+    "expected_time_sec": 60,
+    "stimulus": "In legal contexts, the term *burden of proof* refers to:",
+    "choices": {
+      "A": "The evidence used to convict a defendant.",
+      "B": "The obligation to prove a disputed claim.",
+      "C": "The collection of laws used to determine fault.",
+      "D": "The likelihood that a defendant is guilty.",
+      "E": "A witness's responsibility to answer questions."
+    },
+    "correct_answer": "B",
+    "explanation": "*Burden of proof* is the obligation one party has to prove the allegations they assert.",
+    "professor_feedback": {
+      "veritas": {
+        "correct": "Nice and precise. Definitions matter in law.",
+        "incorrect": "Legal terms demand accuracy. Don\u2019t generalize."
+      },
+      "oak": {
+        "correct": "Good. Keep building your legal vocabulary.",
+        "incorrect": "It\u2019s about obligation, not just evidence."
+      },
+      "strickland": {
+        "correct": "Sharp recall. You\u2019re building a strong lexicon.",
+        "incorrect": "You confused weight with duty. Review terminology."
+      },
+      "calder": {
+        "correct": "Language frames law\u2014good use of context.",
+        "incorrect": "Don't skim meaning. Legal terms have anchors."
+      }
+    }
+  }
+]
